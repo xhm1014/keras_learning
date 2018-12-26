@@ -57,6 +57,8 @@ See the following function, especially my annoated parts, we can find: transform
 
 Transformation order is not very important for image augumentation, but still we may want to know the order. we can find it at function: def apply_transform(...). Basically the order is: (1) affine transform (rotation, shift, shear, zoom) (2) channel_shift_intensity (3) flip_horizontal (4) flip_vertical (5) brightness
 
+Note that: channel_shift_range: np.clip (each of RGB channel+random intensity, min_x (e.g.,0), max_x(e.g.,255))
+
 See the code of standardization below and my added annotations:
 
     def standardize(self, x):
