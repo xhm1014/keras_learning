@@ -55,7 +55,7 @@ See the following function, especially my annoated parts, we can find: transform
             return batch_x
         return batch_x, batch_y
 
-
+Transformation order is not very important for image augumentation, but still we may want to know the order. we can find it at function: def apply_transform(...). Basically the order is: (1) affine transform (rotation, shift, shear, zoom) (2) channel_shift_intensity (3) flip_horizontal (4) flip_vertical (5) brightness
 
 See the code of standardization below and my added annotations:
 
