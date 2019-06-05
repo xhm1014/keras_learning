@@ -27,7 +27,7 @@ where x is is a numpy array containing a batch of images with shape (batch_size,
 Based on the above definition, we can get the images and labels from 'train_generator' using following codes:
 
 batch_size=50                                         # this is the pre-defined batch size
-train_features = np.zeros(shape=(nTrain, 7, 7, 512))  # this is for vgg16 model
+train_features = np.zeros(shape=(nTrain, 7, 7, 512))  # this is for vgg16 model, nTrain-> the total number of training images
 train_labels = np.zeros(shape=(nTrain,3))             # this is for 3 class prediction
 i = 0
 for inputs_batch, labels_batch in train_generator:
