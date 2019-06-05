@@ -1,7 +1,7 @@
 # keras_learning
 In this repository, I will make notes about keras application
 
-## Question 1: Image augumentaton orders using Keras function ----------------------------##
+## Question 1: Image augumentaton orders using Keras function ----------------------##
 
 Recently, I tried to train a deep learning model for tumor or non-tumor classifcation from pathology images. I used 'keras.preprocessing.image.ImageDataGenerator(...)' class to perform image augumentation. As we could find from keras website (https://keras.io/preprocessing/image/), there are many arugments that can be set for the function ImageDataGenerator(). 
 
