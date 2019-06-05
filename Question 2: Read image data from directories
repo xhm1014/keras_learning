@@ -2,3 +2,14 @@
 
 When training deep learning models, the image data is usually stored in the computer disk. 
 We need to load images from computer disk for training deep leanring model.
+
+We usually see similar sample code below:
+
+datagen=ImageDataGenerator(rescale=1./255)
+train_generator=datagen.flow_from_directory(
+        train_dir,
+        target_size=(img_width,img_height),
+        batch_size=batch_size,
+        class_mode='binary',
+        shuffle=False
+    )
