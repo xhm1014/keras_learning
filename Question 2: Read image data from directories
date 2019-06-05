@@ -1,3 +1,4 @@
 ## Question 2: Read image data from directories-----------##
 
-When training deep learning models, the image data is usually stored in the computer disk. We need to load images from computer disk for training deep leanring model.
+When training deep learning models, the image data is usually stored in the computer disk. 
+We need to load images from computer disk for training deep leanring model.
