@@ -38,4 +38,10 @@ for inputs_batch, labels_batch in train_generator:
     if i * batch_size >= nImages:
         break
 
-2) when we use the above program, we may come up another question. If we have 120 training images, and out batch_size=50, how about the 'train_generator'????
+2) when we use the above program, we may come up another question. 
+If we have 120 training images, and our batch_size=50, how about the 'train_generator'????
+
+Answer: based on my expriments, in 'train_generator' it yields 3 tuples of (x,y):
+first (x,y): 50 images and labels
+second (x,y): 50 images and labels
+third (x,y): 20 images and labels
