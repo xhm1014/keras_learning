@@ -23,3 +23,17 @@ Answer: according to the keras source code, we can get:
 'train_generator' is a 'DirectoryIterator' yielding tuples of '(x,y)'
 where x is is a numpy array containing a batch of images with shape (batch_size,*target_size, channels)
       y is a numpy array of corredponding labels
+
+Based on the above definition, we can get the images and labels from 'train_generator' using following codes:
+
+batch_size=50                                         # this is the pre-defined batch size
+train_features = np.zeros(shape=(nTrain, 7, 7, 512))  # this is for vgg16 model
+train_labels = np.zeros(shape=(nTrain,3))             # this is for 3 class prediction
+i = 0
+for inputs_batch, labels_batch in train_generator:
+    features_batch = vgg16.predict(inputs_batch)
+    train_features[i * batch_size : (i + 1) * batch_size] = features_batch
+    train_labels[i * batch_size : (i + 1) * batch_size] = labels_batch
+    i += 1
+    if i * batch_size >= nImages:
+        break
