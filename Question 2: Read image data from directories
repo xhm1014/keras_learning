@@ -13,3 +13,13 @@ train_generator=datagen.flow_from_directory(
         class_mode='binary',
         shuffle=False
     )
+
+Now we may have questions: 
+
+1) what is the return object 'train_generator'???
+
+Answer: according to the keras source code, we can get:
+
+'train_generator' is a 'DirectoryIterator' yielding tuples of '(x,y)'
+where x is is a numpy array containing a batch of images with shape (batch_size,*target_size, channels)
+      y is a numpy array of corredponding labels
