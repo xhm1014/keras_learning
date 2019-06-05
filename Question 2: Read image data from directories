@@ -31,9 +31,11 @@ train_features = np.zeros(shape=(nTrain, 7, 7, 512))  # this is for vgg16 model,
 train_labels = np.zeros(shape=(nTrain,3))             # this is for 3 class prediction
 i = 0
 for inputs_batch, labels_batch in train_generator:
-    features_batch = vgg16.predict(inputs_batch)
+    features_batch = vgg16.predict(inputs_batch)      # inputs_batch: a batch of training images, labels_batch: a batch of image labels
     train_features[i * batch_size : (i + 1) * batch_size] = features_batch
     train_labels[i * batch_size : (i + 1) * batch_size] = labels_batch
     i += 1
     if i * batch_size >= nImages:
         break
+
+2) when we use the above program, we may come up another question. If we have 120 training images, and out batch_size=50, how about the 'train_generator'????
