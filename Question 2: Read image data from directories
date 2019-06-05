@@ -45,3 +45,7 @@ Answer: based on my expriments, in 'train_generator' it yields 3 tuples of (x,y)
 first (x,y): 50 images and labels
 second (x,y): 50 images and labels
 third (x,y): 20 images and labels
+
+3) when the number is images is not the integer times of the batch number, we can use model to predict as follows:
+
+train_bottleneck_features=model.predict_generator(train_generator,steps=np.ceil(float(trainN)/batch_size))
